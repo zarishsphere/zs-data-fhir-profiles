@@ -17,13 +17,10 @@ Usage: #example
 * meta.lastUpdated = "2026-01-15T08:30:00Z"
 * meta.profile = "https://fhir.zarishsphere.com/StructureDefinition/ZSPatient"
 
-* extension[tenantId].url = "https://fhir.zarishsphere.com/StructureDefinition/ext/tenant-id"
 * extension[tenantId].valueString = "cpi:bgd-health:camp-1w"
 
-* extension[campId].url = "https://fhir.zarishsphere.com/StructureDefinition/ext/camp-id"
 * extension[campId].valueString = "camp-1w"
 
-* extension[programCode].url = "https://fhir.zarishsphere.com/StructureDefinition/ext/program-code"
 * extension[programCode].valueCode = #bgd-rohingya
 
 * identifier[unhcrId].use = #official
@@ -77,7 +74,6 @@ Usage: #example
 * id = "example-obs-bp-001"
 * meta.lastUpdated = "2026-01-15T09:00:00Z"
 
-* extension[tenantId].url = "https://fhir.zarishsphere.com/StructureDefinition/ext/tenant-id"
 * extension[tenantId].valueString = "cpi:bgd-health:camp-1w"
 
 * status = #final
@@ -119,7 +115,6 @@ Usage: #example
 * id = "example-obs-muac-001"
 * meta.lastUpdated = "2026-01-15T09:10:00Z"
 
-* extension[tenantId].url = "https://fhir.zarishsphere.com/StructureDefinition/ext/tenant-id"
 * extension[tenantId].valueString = "cpi:bgd-health:camp-1w"
 
 * status = #final
@@ -153,7 +148,6 @@ Usage: #example
 * id = "example-encounter-anc-001"
 * meta.lastUpdated = "2026-01-15T10:00:00Z"
 
-* extension[tenantId].url = "https://fhir.zarishsphere.com/StructureDefinition/ext/tenant-id"
 * extension[tenantId].valueString = "cpi:bgd-health:camp-1w"
 
 * status = #finished
@@ -167,9 +161,5 @@ Usage: #example
 
 * subject = Reference(ExampleZSPatientRohingya)
 
-* period.start = "2026-01-15T10:00:00Z"
-* period.end = "2026-01-15T10:45:00Z"
-
-* reasonCode[0].coding[0].system = "http://snomed.info/sct"
-* reasonCode[0].coding[0].code = #72892002
-* reasonCode[0].coding[0].display = "Normal pregnancy"
+* actualPeriod.start = "2026-01-15T10:00:00Z"
+* actualPeriod.end = "2026-01-15T10:45:00Z"
