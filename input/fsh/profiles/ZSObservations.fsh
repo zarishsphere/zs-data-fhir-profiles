@@ -97,6 +97,9 @@ Description: """
 """
 
 * code = http://loinc.org#56072-2 "Mid upper arm circumference"
+* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.path = "$this"
+* category ^slicing.rules = #open
 * category contains nutritionCategory 1..1
 * category[nutritionCategory] = http://terminology.hl7.org/CodeSystem/observation-category#survey "Survey"
 * value[x] only Quantity
@@ -162,9 +165,9 @@ Description: "ZarishSphere clinical encounter. Mandates class, status, subject, 
 * serviceProvider only Reference(ZSOrganization)
 * location MS
 * participant MS
-* period MS
+* actualPeriod MS
 * type MS
-* reasonCode MS
+* reason MS
 * diagnosis MS
 
 // ----------------------------------------------------------------------------
@@ -186,7 +189,7 @@ Description: "ZarishSphere diagnosis/condition. Uses ICD-11 or SNOMED CT for cod
 * subject 1..1 MS
 * subject only Reference(ZSPatient)
 * recordedDate MS
-* recorder MS
+* participant MS
 * onset[x] MS
 * severity MS
 * note MS
@@ -205,7 +208,7 @@ Description: "Health facility location in the ZarishSphere facility registry. Su
 * name 1..1 MS
 * type 1..* MS
 * type from ZSFacilityTypeValueSet (extensible)
-* telecom MS
+* contact MS
 * address 1..1 MS
 * address.country 1..1 MS
 * address.district MS
@@ -226,5 +229,4 @@ Description: "Organization in the ZarishSphere platform (NGO, MoH, program)."
 * type MS
 * name 1..1 MS
 * identifier MS
-* telecom MS
-* address MS
+* contact MS
