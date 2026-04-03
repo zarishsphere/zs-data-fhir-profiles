@@ -1,0 +1,59 @@
+# ZarishSphere FHIR Implementation Guide — SUSHI Configuration
+# SUSHI (SUSHI Unslices FHIR Shorthand) compiles .fsh files into FHIR R5 IG
+# Run: sushi . (from this directory)
+# Output: fsh-generated/
+
+id: zarishsphere-fhir-ig
+canonical: https://fhir.zarishsphere.com
+name: ZarishSphereIG
+title: "ZarishSphere FHIR Implementation Guide"
+description: >-
+  FHIR R5 Implementation Guide for ZarishSphere — the sovereign multi-national
+  digital health operating platform for South and Southeast Asia.
+  Covers patient registration, clinical encounters, vital signs, diagnoses,
+  medications, immunizations, nutrition, and public health surveillance.
+  Includes Bangladesh (BGD) national adaptations and Cox's Bazar refugee response profiles.
+status: active
+version: 1.0.0
+fhirVersion: 5.0.0
+copyrightYear: 2024+
+releaseLabel: STU1
+license: Apache-2.0
+publisher:
+  name: ZarishSphere
+  url: https://zarishsphere.com
+  email: platform@zarishsphere.com
+
+dependencies:
+  hl7.fhir.r5.core:
+    id: hl7fhir
+    uri: http://hl7.org/fhir/R5
+    version: 5.0.0
+
+pages:
+  index.md:
+    title: Introduction
+  profiles.md:
+    title: Profiles
+  extensions.md:
+    title: Extensions
+  valuesets.md:
+    title: Value Sets
+  downloads.md:
+    title: Downloads
+
+menu:
+  IG Home: index.html
+  Profiles: profiles.html
+  Extensions: extensions.html
+  Value Sets: valuesets.html
+  Downloads: downloads.html
+
+parameters:
+  show-inherited-invariants: false
+  path-resource:
+    - input/fsh/profiles
+    - input/fsh/extensions
+    - input/fsh/valuesets
+    - input/fsh/codesystems
+    - input/fsh/instances
